@@ -1,0 +1,9 @@
+.logo {
+  font-size: 2rem;
+  font-family: 'Oxygen', sans-serif;
+  cursor: pointer;
+}
+
+.logo span {
+  color: var(--color-main-green);
+}
