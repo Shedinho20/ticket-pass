@@ -1,0 +1,24 @@
+.container {
+  height: 100vh;
+  min-height: 550px;
+}
+
+.container form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerDate {
+  width: 100%;
+  padding: 0 !important;
+}
+
+@media screen and (max-width: 600px) {
+  .containerDate {
+    flex-direction: column !important;
+  }
+}

@@ -1,0 +1,26 @@
+.paginationContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 'max-content';
+  background: var(--color-white);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.paginationContainer li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background: var(--color-light-green);
+  color: var(--color-main-gray);
+  margin: 0.2rem;
+}
+
+.active {
+  background: var(--color-main-green) !important;
+  color: var(--color-white) !important;
+}

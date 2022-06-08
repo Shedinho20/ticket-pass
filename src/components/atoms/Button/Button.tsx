@@ -3,7 +3,7 @@ import React from 'react';
 import { Color } from '../../../theme/color';
 import styles from './button.module.css';
 
-export type ButtonProps = {
+type ButtonProps = {
   children: React.ReactNode;
   onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   bgColor?: Color;

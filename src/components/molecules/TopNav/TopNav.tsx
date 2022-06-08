@@ -1,7 +1,7 @@
 import React from 'react';
 import { Logo } from '../../atoms';
 import { Container } from '../../layouts';
-import { Nav } from '../Nav/Nav/Nav';
+import { Nav } from '../Nav/Nav';
 import styles from './topNav.module.css';
 
 export const TopNav = () => {

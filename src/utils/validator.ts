@@ -21,6 +21,31 @@ export const validators: ValidationType = {
     if (password.length < 7) {
       return 'Password is weak';
     }
+  },
+  desc: (desc: string) => {
+    if (desc === '') {
+      return 'Description is required';
+    }
+  },
+  name: (name: string) => {
+    if (name === '') {
+      return 'Event name is required';
+    }
+  },
+  endDate: (endDate: string) => {
+    if (endDate === '') {
+      return 'Date is required';
+    }
+  },
+  startDate: (endDate: string) => {
+    if (endDate === '') {
+      return 'Date is required';
+    }
+  },
+  uploadeImage: (uploadeImage: any) => {
+    if (!uploadeImage) {
+      return 'Upload an image';
+    }
   }
 };
 
@@ -30,7 +55,7 @@ export const validateForm = (formData: Record<string, any>, formValidation: Vali
   let isValid = true;
   for (let i = 0; i < dataKeys.length; i++) {
     const dataKey = dataKeys[i];
-    const error = formValidation[dataKey](formData[dataKey], undefined, formData);
+    const error = formValidation[dataKey](formData[dataKey]);
     errors[dataKey] = error;
     if (error) {
       isValid = false;

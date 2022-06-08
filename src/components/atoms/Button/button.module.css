@@ -3,6 +3,7 @@
   border-radius: 2rem;
   transition: 0.3s ease-in-out;
   font-size: 0.8rem;
+  white-space: nowrap;
   text-transform: uppercase;
 
   padding: 1em 3em;
@@ -12,10 +13,6 @@
 
 .button:disabled {
   pointer-events: none;
-}
-
-.outline:disabled {
-  color: var(--color-disabled);
 }
 
 .button:hover {
@@ -29,7 +26,7 @@
 }
 
 .outline:hover {
-  background-color: rgba(102, 200, 156, 0.1) !important;
+  background-color: var(--color-light-green) !important;
   filter: none;
 }
 

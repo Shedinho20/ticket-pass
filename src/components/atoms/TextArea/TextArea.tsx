@@ -1,41 +1,42 @@
 import classNames from 'classnames';
-import React, { HTMLInputTypeAttribute } from 'react';
+import React from 'react';
 import { Spacer } from '../../layouts';
-import styles from './input.module.css';
+import styles from './textArea.module.css';
 
-interface BaseInputProps {
-  type: HTMLInputTypeAttribute;
+type TextAreaProps = {
   name: string;
   value: string | number;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  placeholder?: string;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  placeholder: string;
+  disabled?: boolean;
   autoComplete?: string;
   label?: string;
   error?: string;
-}
+  rows?: number;
+};
 
-export const Input: React.FunctionComponent<BaseInputProps> = ({
-  type,
+export const TextArea: React.FunctionComponent<TextAreaProps> = ({
   name,
   placeholder,
   value,
   onChange,
   autoComplete,
   label,
-  error
+  error,
+  rows = 10
 }) => {
   return (
     <div className={styles.container}>
       {label && <h3 className={styles.label}>{label}</h3>}
       <Spacer height={5} />
-      <input
-        type={type}
+      <textarea
         name={name}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className={classNames(styles.input, { 'error-border': !!error })}
+        className={classNames(styles.textarea, { 'error-border': !!error })}
         autoComplete={autoComplete}
+        rows={rows}
       />
       <Spacer height={5} />
       {error && <h3 className={styles.error}>{error}</h3>}

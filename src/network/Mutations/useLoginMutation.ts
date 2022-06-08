@@ -20,8 +20,7 @@ export const useLoginMutation = () => {
       setAuth(localData);
       navigate(HOME);
     },
-    onError: (error: Record<any, any>) => {
-      console.log(error);
+    onError: (error: Record<string, any>) => {
       toast.error(`${error?.response?.data?.message || ERROR_MESSAGE}`);
     }
   });

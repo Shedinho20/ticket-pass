@@ -5,8 +5,9 @@
   --color-white: #ffffff;
   --color-mild-gray: #343a40;
   --color-main-black: #212529;
-  --color-disable: #cccccc;
+  --color-disable: #ccc;
   --color-border: #d9d9d9;
+  --color-light-green: rgba(102, 200, 156, 0.1);
 }
 
 * {

@@ -10,7 +10,6 @@ export const AuthRoute = () => {
       <Route element={<ProtectedRoute />}>
         <Route path={LOGIN} element={<LoginPage />} />
       </Route>
-      <Route path={LOGIN} element={<LoginPage />} />
       <Route path={NOTFOUND} element={<Navigate to="/auth/login" />} />
     </Routes>
   );

@@ -3,20 +3,21 @@
   position: relative;
 }
 
-.input {
+.textarea {
   padding: 1em 1.5em;
   outline: none;
   transition: 0.3s ease-in-out;
   border: 1px solid var(--color-light-gray);
-  border-radius: 30px;
+  border-radius: 10px;
   width: 100%;
+  resize: none;
 }
 
-.input:hover {
+.textarea:hover {
   border-color: var(--color-main-green);
 }
 
-.input:focus {
+.textarea:focus {
   border-color: var(--color-main-green);
 }
 
