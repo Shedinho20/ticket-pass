@@ -4,8 +4,8 @@ import { axiosService } from '../Config/axios.service';
 
 export const loginService = async (payload: ILogin) => {
   const data = new FormData();
-  data.append('grant_type', process.env.REACT_APP_GRANT_TYPE as string);
-  data.append('client_id', process.env.REACT_APP_CLIENT_ID as string);
+  data.append('grant_type', 'password');
+  data.append('client_id', '966c01ba-31b1-40a2-8f4c-fab8b1373bd7');
   data.append('username', payload.email);
   data.append('password', payload.password);
 
