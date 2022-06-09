@@ -1,8 +1,7 @@
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
+import { useLogout } from '../../common/hooks/useLogout';
 import { userAtom } from '../../store/atoms/userAtom';
-import { LOGIN } from '../apiEndpoint';
 
 const baseURL = process.env.NODE_ENV === 'production' ? 'prod_url from env' : 'http://localhost:8000';
 
@@ -14,8 +13,8 @@ const axiosPrivate = axios.create({
 });
 
 export const useAxiosPrivate = () => {
-  const [auth, setAuth] = useRecoilState(userAtom);
-  const navigate = useNavigate();
+  const auth = useRecoilValue(userAtom);
+  const logout = useLogout();
 
   axiosPrivate.interceptors.request.use(async (req: any) => {
     if (auth?.access_token && auth?.exp) {
@@ -27,9 +26,7 @@ export const useAxiosPrivate = () => {
       }
     }
 
-    localStorage.clear();
-    setAuth({});
-    navigate(`/auth/${LOGIN}`);
+    logout();
   });
 
   return axiosPrivate;
